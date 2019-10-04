@@ -1,0 +1,18 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: Onova
+    environment:
+      - APPLICATION_HOST=localhost
+      - APPLICATION_PORT=3310
+      - DATABASE_URL=mongodb://host.docker.internal/onova-data
+      - DATABASE_SSL=false
+      - DATABASE_ENCRYPT=false
+      - AUTH_SECRET=***REMOVED***
+    ports:
+      - "3310:3310"
+    volumes:
+      - ./:/usr/src/app
