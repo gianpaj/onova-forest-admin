@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 
-const schema = mongoose.Schema({
+const { Schema } = mongoose;
+
+const schema = new Schema({
   'accountStatus': String,
   'bio': String,
   'buyerType': String,
@@ -9,6 +11,7 @@ const schema = mongoose.Schema({
   'emailAddress': String,
   'followersCount': Number,
   'followingCount': Number,
+  generatedAt: Date,
   'mobileNumber': String,
   'password': String,
   'platform': String,
@@ -19,6 +22,11 @@ const schema = mongoose.Schema({
   'sharedCount': Number,
   'updatedAt': Date,
   'username': String,
+  types: {
+    type: [{ type: String }],
+    default: ['designer'],
+    // required: true,
+  },
 }, {
   timestamps: false,
 });

@@ -18,7 +18,7 @@ const schema = new Schema({
   'description': String,
   dropId: {
     type: Schema.Types.ObjectId,
-    ref: 'Drop',
+    ref: 'drops',
   },
   location: { type: GeoJSON, required: false },
   'locality': String,
@@ -34,7 +34,7 @@ const schema = new Schema({
   'reservedDate': Date,
   seller: {
     type: Schema.Types.ObjectId,
-    ref: 'User',
+    ref: 'users',
     required: true,
   },
   status: {

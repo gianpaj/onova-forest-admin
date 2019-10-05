@@ -1176,7 +1176,7 @@
       "isRequired": false,
       "isSortable": true,
       "isVirtual": false,
-      "reference": "undefined._id",
+      "reference": "drops._id",
       "inverseOf": null,
       "validations": []
     }, {
@@ -1287,7 +1287,7 @@
       "isRequired": true,
       "isSortable": true,
       "isVirtual": false,
-      "reference": "undefined._id",
+      "reference": "users._id",
       "inverseOf": null,
       "validations": [{
         "message": null,
@@ -1790,6 +1790,20 @@
       "inverseOf": null,
       "validations": []
     }, {
+      "field": "generatedAt",
+      "type": "Date",
+      "defaultValue": null,
+      "enums": null,
+      "integration": null,
+      "isFilterable": true,
+      "isReadOnly": false,
+      "isRequired": false,
+      "isSortable": true,
+      "isVirtual": false,
+      "reference": null,
+      "inverseOf": null,
+      "validations": []
+    }, {
       "field": "mobileNumber",
       "type": "String",
       "defaultValue": null,
@@ -1891,6 +1905,20 @@
       "field": "sharedCount",
       "type": "Number",
       "defaultValue": null,
+      "enums": null,
+      "integration": null,
+      "isFilterable": true,
+      "isReadOnly": false,
+      "isRequired": false,
+      "isSortable": true,
+      "isVirtual": false,
+      "reference": null,
+      "inverseOf": null,
+      "validations": []
+    }, {
+      "field": "types",
+      "type": ["String"],
+      "defaultValue": ["designer"],
       "enums": null,
       "integration": null,
       "isFilterable": true,
