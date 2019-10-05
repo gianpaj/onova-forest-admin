@@ -2,17 +2,17 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const GeoJSON = new Schema({
-  type: { type: String, enum: ['Point'], required: true },
-  coordinates: [Number],
-});
-
-
 const schema = new Schema({
+  seller: {
+    type: Schema.Types.ObjectId,
+    ref: 'users',
+    required: true,
+  },
   categoryIds: {
     type: [Number],
     required: true,
   },
+  'uuid': String,
   'createdAt': Date,
   'currency': String,
   'description': String,
@@ -20,7 +20,6 @@ const schema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'drops',
   },
-  location: { type: GeoJSON, required: false },
   'locality': String,
   photoURIs: {
     type: [String],
@@ -32,11 +31,6 @@ const schema = new Schema({
   },
   'quantity': Number,
   'reservedDate': Date,
-  seller: {
-    type: Schema.Types.ObjectId,
-    ref: 'users',
-    required: true,
-  },
   status: {
     type: String,
     required: true,
@@ -44,7 +38,6 @@ const schema = new Schema({
     enum: ['forsale', 'sold', 'banned', 'deleted', 'ready'],
   },
   'updatedAt': Date,
-  'uuid': String,
   'weight': Number,
 }, {
   timestamps: false,
