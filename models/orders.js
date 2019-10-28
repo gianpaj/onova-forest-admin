@@ -11,7 +11,7 @@ const schema = new Schema({
   buyerType: {
     type: String,
     required: true,
-    enum: ['User', 'UserWeb'],
+    enum: ['users', 'userswebs'],
   },
   cityRecipient: String,
   citySender: String,
@@ -30,7 +30,7 @@ const schema = new Schema({
   dateShipped: Date,
   product: {
     type: Schema.Types.ObjectId,
-    ref: 'Product',
+    ref: 'products',
     required: true,
   },
   reason: String,
