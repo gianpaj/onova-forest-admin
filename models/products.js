@@ -26,7 +26,7 @@ const schema = new Schema({
     // required: true, // added async after the images are uploaded to GSC
   },
   price: {
-    type: Schema.Types.Decimal128,
+    type: Schema.Types.Decimal,
     required: true,
   },
   quantity: Number,
