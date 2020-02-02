@@ -1,13 +1,13 @@
 const requireAll = require('require-all');
 const chalk = require('chalk');
-const models = require('../../models');
+// const models = require('../../models');
 
 module.exports = function (app) {
   require('lumber-forestadmin').run(app, {
     modelsDir: __dirname + '/../../models',
     envSecret: process.env.FOREST_ENV_SECRET,
     authSecret: process.env.FOREST_AUTH_SECRET,
-    mongoose: require('mongoose'), 
+    mongoose: require('mongoose'),
   });
 
   requireAll({

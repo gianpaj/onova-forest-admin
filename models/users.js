@@ -38,7 +38,7 @@ const schema = new Schema({
   },
   username: String,
   types: {
-    type: [{ type: String, enum: ['designer', 'admin', 'reseller'] }],
+    type: String, enum: ['designer', 'admin', 'reseller'],
     default: ['designer'],
     // required: true,
   },
