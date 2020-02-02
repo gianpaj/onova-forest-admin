@@ -722,26 +722,34 @@
       "integration": null,
       "isFilterable": true,
       "isReadOnly": false,
-      "isRequired": false,
+      "isRequired": true,
       "isSortable": true,
       "isVirtual": false,
-      "reference": null,
+      "reference": "users._id",
       "inverseOf": null,
-      "validations": []
+      "validations": [{
+        "message": null,
+        "type": "is present",
+        "value": null
+      }]
     }, {
       "field": "buyerType",
-      "type": "String",
+      "type": "Enum",
       "defaultValue": null,
-      "enums": null,
+      "enums": ["users", "userswebs"],
       "integration": null,
       "isFilterable": true,
       "isReadOnly": false,
-      "isRequired": false,
+      "isRequired": true,
       "isSortable": true,
       "isVirtual": false,
       "reference": null,
       "inverseOf": null,
-      "validations": []
+      "validations": [{
+        "message": null,
+        "type": "is present",
+        "value": null
+      }]
     }, {
       "field": "cityRecipient",
       "type": "String",
@@ -787,17 +795,21 @@
     }, {
       "field": "currency",
       "type": "String",
-      "defaultValue": null,
+      "defaultValue": "UAH",
       "enums": null,
       "integration": null,
       "isFilterable": true,
       "isReadOnly": false,
-      "isRequired": false,
+      "isRequired": true,
       "isSortable": true,
       "isVirtual": false,
       "reference": null,
       "inverseOf": null,
-      "validations": []
+      "validations": [{
+        "message": null,
+        "type": "is present",
+        "value": null
+      }]
     }, {
       "field": "dateCancelled",
       "type": "Date",
@@ -904,12 +916,16 @@
       "integration": null,
       "isFilterable": true,
       "isReadOnly": false,
-      "isRequired": false,
+      "isRequired": true,
       "isSortable": true,
       "isVirtual": false,
-      "reference": null,
+      "reference": "products._id",
       "inverseOf": null,
-      "validations": []
+      "validations": [{
+        "message": null,
+        "type": "is present",
+        "value": null
+      }]
     }, {
       "field": "reason",
       "type": "String",
@@ -960,17 +976,21 @@
       "integration": null,
       "isFilterable": true,
       "isReadOnly": false,
-      "isRequired": false,
+      "isRequired": true,
       "isSortable": true,
       "isVirtual": false,
-      "reference": null,
+      "reference": "users._id",
       "inverseOf": null,
-      "validations": []
+      "validations": [{
+        "message": null,
+        "type": "is present",
+        "value": null
+      }]
     }, {
       "field": "shippingProvider",
-      "type": "String",
+      "type": "Enum",
       "defaultValue": null,
-      "enums": null,
+      "enums": ["novaposhta"],
       "integration": null,
       "isFilterable": true,
       "isReadOnly": false,
@@ -1010,18 +1030,32 @@
       "validations": []
     }, {
       "field": "status",
-      "type": "String",
-      "defaultValue": null,
-      "enums": null,
+      "type": "Enum",
+      "defaultValue": "pending",
+      "enums": [
+        "pending",
+        "paid",
+        "confirmed",
+        "shipped",
+        "cancelled",
+        "delivered",
+        "completed",
+        "failed_by_buyer",
+        "failed_by_seller"
+      ],
       "integration": null,
       "isFilterable": true,
       "isReadOnly": false,
-      "isRequired": false,
+      "isRequired": true,
       "isSortable": true,
       "isVirtual": false,
       "reference": null,
       "inverseOf": null,
-      "validations": []
+      "validations": [{
+        "message": null,
+        "type": "is present",
+        "value": null
+      }]
     }, {
       "field": "trackingNumber",
       "type": "String",
@@ -1656,18 +1690,27 @@
       "validations": []
     }, {
       "field": "accountStatus",
-      "type": "String",
-      "defaultValue": null,
-      "enums": null,
+      "type": "Enum",
+      "defaultValue": "notverified",
+      "enums": [
+        "verified",
+        "notverified",
+        "banned",
+        "deleted"
+      ],
       "integration": null,
       "isFilterable": true,
       "isReadOnly": false,
-      "isRequired": false,
+      "isRequired": true,
       "isSortable": true,
       "isVirtual": false,
       "reference": null,
       "inverseOf": null,
-      "validations": []
+      "validations": [{
+        "message": null,
+        "type": "is present",
+        "value": null
+      }]
     }, {
       "field": "bio",
       "type": "String",
@@ -1683,8 +1726,8 @@
       "inverseOf": null,
       "validations": []
     }, {
-      "field": "buyerType",
-      "type": "String",
+      "field": "createdAt",
+      "type": "Date",
       "defaultValue": null,
       "enums": null,
       "integration": null,
@@ -1697,7 +1740,7 @@
       "inverseOf": null,
       "validations": []
     }, {
-      "field": "createdAt",
+      "field": "deletedAt",
       "type": "Date",
       "defaultValue": null,
       "enums": null,
@@ -1795,20 +1838,6 @@
       "inverseOf": null,
       "validations": []
     }, {
-      "field": "password",
-      "type": "String",
-      "defaultValue": null,
-      "enums": null,
-      "integration": null,
-      "isFilterable": true,
-      "isReadOnly": false,
-      "isRequired": false,
-      "isSortable": true,
-      "isVirtual": false,
-      "reference": null,
-      "inverseOf": null,
-      "validations": []
-    }, {
       "field": "platform",
       "type": "String",
       "defaultValue": null,
@@ -1879,6 +1908,31 @@
       "inverseOf": null,
       "validations": []
     }, {
+      "field": "scraping",
+      "type": {
+        "fields": [{
+          "field": "instagram",
+          "type": "String"
+        }, {
+          "field": "enabled",
+          "type": "Boolean"
+        }, {
+          "field": "preferredCategoryId",
+          "type": "Number"
+        }]
+      },
+      "defaultValue": null,
+      "enums": null,
+      "integration": null,
+      "isFilterable": true,
+      "isReadOnly": false,
+      "isRequired": false,
+      "isSortable": true,
+      "isVirtual": false,
+      "reference": null,
+      "inverseOf": null,
+      "validations": []
+    }, {
       "field": "sharedCount",
       "type": "Number",
       "defaultValue": null,
@@ -1893,10 +1947,42 @@
       "inverseOf": null,
       "validations": []
     }, {
-      "field": "types",
-      "type": ["String"],
-      "defaultValue": ["designer"],
+      "field": "shippingAddress",
+      "type": {
+        "fields": [{
+          "field": "firstName",
+          "type": "String"
+        }, {
+          "field": "lastName",
+          "type": "String"
+        }, {
+          "field": "city",
+          "type": "String"
+        }, {
+          "field": "departmentNovaposhta",
+          "type": "String"
+        }]
+      },
+      "defaultValue": null,
       "enums": null,
+      "integration": null,
+      "isFilterable": true,
+      "isReadOnly": false,
+      "isRequired": false,
+      "isSortable": true,
+      "isVirtual": false,
+      "reference": null,
+      "inverseOf": null,
+      "validations": []
+    }, {
+      "field": "types",
+      "type": "Enum",
+      "defaultValue": ["designer"],
+      "enums": [
+        "designer",
+        "admin",
+        "reseller"
+      ],
       "integration": null,
       "isFilterable": true,
       "isReadOnly": false,
